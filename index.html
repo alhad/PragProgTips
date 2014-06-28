@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pragmatic Software Development Tips</title>
+    <title>Pragmatic Software and Effective C++ Development Tips</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -17,12 +17,21 @@
     <div class="card">
         <input id="tipNumber" type="hidden">
         <div id="tip">
+            <div id="section"></div>
             <div id="title"></div>
             <div id="desc"></div>
         </div>
-        <p><a target="_blank" href="http://pragprog.com/the-pragmatic-programmer/extracts/tips">Read more Pragmatic Software Development Tips</a></p>
         <span><a target="_blank" href="https://github.com/braydie/PragProgTips" title="View on GitHub"><i class="fa fa-github fa-2x"></i></a></span>
         <span id="settings-toggle"><a href="#" onclick="toggleVisibility('settings')" title="Toggle Settings"><i class="fa fa-cog fa-2x"></i></a></span>
+    </div>
+
+    <div class="card">
+        <input id="efftipNumber" type="hidden">
+        <div id="efftip">
+            <div id="effsection"></div>
+            <div id="efftitle"></div>
+            <div id="effdesc"></div>
+        </div>
     </div>
 
     <div id="settings" class="card">
@@ -53,10 +62,15 @@
             {
                 itemNumber = Math.floor(Math.random()*Tips.length);
             }
+            effectiveItemNumber = Math.floor(Math.random()*effectiveTips.length);
             var item = Tips[itemNumber];
+            var effectiveItem = effectiveTips[effectiveItemNumber];
             document.getElementById("title").innerHTML = item.title;
             document.getElementById("desc").innerHTML = item.desc;
             document.getElementById("tipNumber").value = itemNumber;
+            document.getElementById("efftitle").innerHTML = effectiveItem.title;
+            document.getElementById("effdesc").innerHTML = effectiveItem.desc;
+            document.getElementById("efftipNumber").value = effectiveItemNumber;
         }
 
         function toggleVisibility(id) {
@@ -388,6 +402,17 @@
                     }
                 ];
 
+        var effectiveTips = [  {
+                                 "title": "maeahi",
+                                 "desc": "Ya baby"
+                              },
+                              {
+                                "title": "maeaha",
+                                "desc": "No baby"
+                              }
+                           ];
+
+
         window.onload = function() {
             if(localStorage.getItem("enableReload") != null)
             {
@@ -407,6 +432,7 @@
                 localStorage.setItem("timeoutMins", 0);
                 document.getElementById("timeoutMins").disabled = true;
             }
+
             showTip();
         }
 

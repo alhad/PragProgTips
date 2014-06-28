@@ -16,6 +16,15 @@ html {
     color:#C2C2C2;
 }
 
+#efftitle {
+    color:#FFFFFF;
+    border-bottom:4px solid #35B7DE; 
+}
+
+#effdesc {
+    color:#C2C2C2;
+}
+
 a {
     color:#DA4453; 
 }
