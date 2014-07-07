@@ -403,13 +403,85 @@
                 ];
 
         var effectiveTips = [  {
-                                 "title": "maeahi",
-                                 "desc": "Ya baby"
+                                 "title": "Item 1: View C++ as a federation of languages",
+                                 "desc": "C, Object oriented C++, Template C++, The STL"
                               },
                               {
-                                "title": "maeaha",
-                                "desc": "No baby"
-                              }
+                                "title": "Item 2: Prefer consts, enums, and lines to #defines",
+                                "desc": "Prefer the compiler to the preprocessor"
+                              },
+                              {
+                                "title": "Item 3: Use const whenever possible",
+                                "desc": "Declaring something const helps compilers detect usage errors"
+                              },
+                              {
+                                "title": "Item 4: Make sure that objects are initialized before they are used",
+                                "desc": "Manually initialize objects of built in types, prefer use of member initializer lists. Replace non-local static objects with local static objects"
+                              },
+                              {
+                                "title": "Item 5: Know what functions C++ silently writes and calls",
+                                "desc": "Compilers may implicitly generate a class's default constructor, copy constructor, copy assignment operator and destructor"
+                              },
+                              {
+                                "title": "Item 6: Explicitly disallow the user of compiler-generated functions you do not want",
+                                "desc": "To disallow functionality automatically provided by compilers, declare the corresponding member functions private and give no implementations. Uncopyable or boost::noncopyable is one way to do it."
+                              },
+                              {
+                                "title": "Item 7: Declare destructors virtual in polymorphic base classes",
+                                "desc": "If a class has any virtual functions, it should have a virtual destructor"
+                              },
+                              {
+                                "title": "Item 8: Prevent exceptions from leaving destructors",
+                                "desc": "If functions called in a destructor may throw, the destructor should catch any exceptions, then swallow them or terminate the program"
+                              },
+                              {
+                                "title": "Item 9: Never call virtual functions during construction or destruction",
+                                "desc": "Such a call will never go to a more derived class than that of the currently executing constructor or destructor"
+                              },
+                              {
+                                "title": "Item 10: Have assignment operators return a reference to *this",
+                                "desc": "This allows you to chain assignments to user defined types together, like x=y=z"
+                              },
+                              {
+                                "title": "Item 11: Handle assignment to self in operator=",
+                                "desc": "Techniques include comparing addresses of source and target objects, careful statement ordering, and copy-and-swap"
+                              },
+                              {
+                                "title": "Item 12: Copy all parts of an object",
+                                "desc": "Copying functions should be sure to copy all of an object's data members and all of its base class parts"
+                              },
+                              {
+                                "title": "Item 13: Use objects to manage resources",
+                                "desc": "Use RAII objects that acquire resources in their constructors and release them in their destructors. tr1::shared_ptr and std::auto_ptr are two commonly useful RAII classes"
+                              },
+                              {
+                                "title": "Item 14: Think carefully about copying behavior in resource managing classes",
+                                "desc": "Copying RAII objects entails copying the resources it manages, so copying behavior of the resource determins copying behavior of the RAII object. Common behaviors are disallowing copying and reference counting."
+                              },
+                              {
+                                "title": "Item 15: Provide access to raw resources in resource-managing classes",
+                                "desc": "Access may be via implicit conversion or explicit conversion. Explicit conversion is safer, but implicit conversion is more convenient for clients."
+                              },
+                              {
+                                "title": "Item 16: Use the same form in corresponding uses of new and delete",
+                                "desc": "Mismatching them may result in undefined behavior or too few destructors being called"
+                              },
+                              {
+                                "title": "Item 17: Stored new-ed objects in smart pointers in standalone statements",
+                                "desc": "Failure to do this can lead to subtle resource leaks when exceptions are thrown"
+                              },
+                              {
+                                "title": "Item 18: Make interfaces easy to use correctly and hard to use incorrectly",
+                                "desc": "Use consistency in interfaces and have behaviorial compatibility with built in types. Prevent errors by creating new types, resticting operations on types, constraining object values, and eliminating client resource management responsibilities. Use custom deleter facility of tr1::shared_ptr to prevent cross DLL problem and to automatically unlock mutexes."
+                              },
+                              {
+                                "title": "Item 19: Treat class design as type design",
+                                "desc": "Think about how should objects of your type be created and destroyed, how should initialization defer from assignment, what does it mean for objects of your type to be passed by value, what are the restrictions on legal values for your new type, does the type fit into an inheritance graph, what kind of type conversions are allowed, what operators and functions makes sense for the new type, what standard functions should be disallowed, who should have access to members of your new type, what is the undeclared interface of your new type, how general is your new type, is a new type really what you need?."
+                              },
+                              {
+                                "title": "Item 20: Prefer pass-by-reference-to-const to pass-by-value",
+                                "desc": "Its typically more efficient and avoids the slicint problem"
+                              },
                            ];
 
 
