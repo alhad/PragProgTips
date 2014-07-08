@@ -480,7 +480,27 @@
                               },
                               {
                                 "title": "Item 20: Prefer pass-by-reference-to-const to pass-by-value",
-                                "desc": "Its typically more efficient and avoids the slicint problem"
+                                "desc": "Its typically more efficient and avoids the slicing problem"
+                              },
+                              {
+                                "title": "Item 21: Don't try to return a reference when you must return an object",
+                                "desc": "Never return a pointer or reference to a local stack object, a reference to a heap allocated object, or pointer or reference to a local static object if there is a change that more than one such object will be needed."
+                              },
+                              {
+                                "title": "Item 22: Declare data members private",
+                                "desc": "It gives clients syntatically uniform access to data, affords fine grained access control, allows invariants to be enforced, and offers class authors implementation flexibility"
+                              },
+                              {
+                                "title": "Item 23: Prefer non-member non-friend functions to member functions",
+                                "desc": "Doing so increases encapsulation, packaging flexibility, and functional extensibility through namespaces. The rule of thumb is, if a public member function can be fully implemented in terms of other public member functions, than it should not be a member function."
+                              },
+                              {
+                                "title": "Item 24: Declare non-member functions when type conversions should apply to all parameters",
+                                "desc": "The first parameter to a function (even an operator) is always 'this', so if you want to be able to specify operations in any order (say 15 * obj rather than obj * 15), then the operator must be implemented as a non member function"
+                              },
+                              {
+                                "title": "Item 25: Consider support for a non-throwing swap",
+                                "desc": "Provide a swap member function when std::swap would be inefficient for your type. Don't throw exceptions in swap as it is often the basis of exception safe assignment operators and other functions. For classes, specialize std::swap (total template specialization). Also offer a non-member swap that calls your member swap."
                               },
                            ];
 
