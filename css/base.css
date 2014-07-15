@@ -4,7 +4,7 @@ html {
 }
 
 .card {    
-    margin-top: 10%;
+    margin-top: 5%;
     margin-left: 4em;
     margin-right: 4em;
     padding:2em;
@@ -19,6 +19,14 @@ html {
     padding-bottom:0.25em;
 }
 
+#bookname {  
+    font-weight: bold; 
+    font-size: 1em; 
+    padding-bottom:0.25em;
+    position:absolute;
+    right: 100px;
+}
+
 #desc { 
     margin-top:1em; 
     margin-bottom:1em; 
@@ -29,6 +37,14 @@ html {
     font-weight: bold; 
     font-size: 2.5em; 
     padding-bottom:0.25em;
+}
+
+#effbookname {  
+    font-weight: bold; 
+    font-size: 1em; 
+    padding-bottom:0.25em;
+    position:absolute;
+    right: 100px;
 }
 
 #effdesc { 

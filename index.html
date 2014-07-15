@@ -18,6 +18,7 @@
         <input id="tipNumber" type="hidden">
         <div id="tip">
             <div id="section"></div>
+            <div id="bookname"></div>
             <div id="title"></div>
             <div id="desc"></div>
         </div>
@@ -29,9 +30,13 @@
         <input id="efftipNumber" type="hidden">
         <div id="efftip">
             <div id="effsection"></div>
+            <div id="effbookname"></div>
             <div id="efftitle"></div>
             <div id="effdesc"></div>
         </div>
+        <div id="effbookname"></div>
+        <span><a target="_blank" href="https://github.com/braydie/PragProgTips" title="View on GitHub"><i class="fa fa-github fa-2x"></i></a></span>
+        <span id="settings-toggle"><a href="#" onclick="toggleVisibility('settings')" title="Toggle Settings"><i class="fa fa-cog fa-2x"></i></a></span>
     </div>
 
     <div id="settings" class="card">
@@ -525,6 +530,8 @@
                 document.getElementById("timeoutMins").disabled = true;
             }
 
+            document.getElementById("bookname").innerHTML = "The Pragmatic programmer: From Journeyman to Master";
+            document.getElementById("effbookname").innerHTML = "Effective C++: 55 Specific Ways to Improve Your Programs and Designs";
             showTip();
         }
 
@@ -537,8 +544,5 @@
             changeTheme("light");
         }
     </script>
-    <div class="pragimg">
-      <a href="http://pragprog.com/book/tpp/the-pragmatic-programmer"> <img src="pragprog.jpg" alt="From The Pragmatic Programmer" width="179" height="228" /></a>
-    </div>
 </body>
 </html>
