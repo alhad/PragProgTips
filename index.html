@@ -16,9 +16,9 @@
 
     <div class="card">
         <input id="tipNumber" type="hidden">
+        <div id="bookname"></div>
         <div id="tip">
             <div id="section"></div>
-            <div id="bookname"></div>
             <div id="title"></div>
             <div id="desc"></div>
         </div>
@@ -28,9 +28,9 @@
 
     <div class="card">
         <input id="efftipNumber" type="hidden">
+        <div id="effbookname"></div>
         <div id="efftip">
             <div id="effsection"></div>
-            <div id="effbookname"></div>
             <div id="efftitle"></div>
             <div id="effdesc"></div>
         </div>
@@ -530,8 +530,8 @@
                 document.getElementById("timeoutMins").disabled = true;
             }
 
-            document.getElementById("bookname").innerHTML = "The Pragmatic programmer: From Journeyman to Master";
-            document.getElementById("effbookname").innerHTML = "Effective C++: 55 Specific Ways to Improve Your Programs and Designs";
+            document.getElementById("bookname").innerHTML = "The Pragmatic programmer";
+            document.getElementById("effbookname").innerHTML = "Effective C++";
             showTip();
         }
 
