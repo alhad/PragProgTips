@@ -507,6 +507,66 @@
                                 "title": "Item 25: Consider support for a non-throwing swap",
                                 "desc": "Provide a swap member function when std::swap would be inefficient for your type. Don't throw exceptions in swap as it is often the basis of exception safe assignment operators and other functions. For classes, specialize std::swap (total template specialization). Also offer a non-member swap that calls your member swap."
                               },
+                              {
+                                "title": "Item 26: Postpone variable definitions as long as possible",
+                                "desc": "It increases program clarity and improves program efficiency"
+                              },
+                              {
+                                "title": "Item 27: Minimize casting",
+                                "desc": "Avoid casts wherever possible, especially dynamic_cast. Try to hide casts inside a function. Prefer C++ style casts to C style, as they are more specific in what they do."
+                              },
+                              {
+                                "title": "Item 28: Avoid returning handles to object internals",
+                                "desc": "It increases encapsulation, helps const member functions act const, and minimizes the creation of dangling handles."
+                              },
+                              {
+                                "title": "Item 29: Strive for exception safe code",
+                                "desc": "Exception safe functions leak no resources and allow no data structures to become corrupted, even when exceptions are thrown. Offer the basic, strong or nothrow guarantees. A function's guarantee cannot be stronger than the weakest guarantee of the functions it calls."
+                              },
+                              {
+                                "title": "Item 30: Understand the ins and outs of inlining",
+                                "desc": "Limit inlining to small, frequently called functions. This helps with debugging and binary upgradibility, minimizes code bloat and maximizes chance of greater program speed. Don't declare function templates inline."
+                              },
+                              {
+                                "title": "Item 31: Minimize compilation dependencies between files",
+                                "desc": "Depend on declarations instead of definitions. Two appoaches are Handle classes and Interface classes. Library header files should exist in full and declaration-only forms."
+                              },
+                              {
+                                "title": "Item 32: Make sure public inheritance models is-a",
+                                "desc": "Everything that applies to base classes must also apply to derived classes, because every derived class object IS a base class object"
+                              },
+                              {
+                                "title": "Item 33: Avoid hiding inherited names",
+                                "desc": "Under public inheritance, this is never desirable. To make hidden names visible, use \"using\" declarations or forwarding functions"
+                              },
+                              {
+                                "title": "Item 34: Differentiate between inheritance of interface and inheritance of implementation",
+                                "desc": "Pure virtual functions specify inheritance of interface only. Simple virtual functions specify inhertitance of interface plus inheritance of a default implementation. Non-virtual functions specify inheritance of interface plus inheritance of a mandatory implementation."
+                              },
+                              {
+                                "title": "Item 35: Consider alternatives to virtual functions",
+                                "desc": "Alternatives include the NVI idiom (non-virtual interface) and various forms of the Strategy design pattern. NVI idiom is example of Template method design pattern. tr1::function objects act like generalized function pointers. They support callable entities compatible with a given target signature."
+                              },
+                              {
+                                "title": "Item 36: Never redefine an inherited non-virtual function",
+                                "desc": "This follows from the is-a definition. A method called on an object will behave differently, depending on whether we call it via a pointer to the base class or a pointer to the derived class, which is why it is not a good idea to override non-virtual methods. They are statically bound unlike virtual methods."
+                              },
+                              {
+                                "title": "Item 37: Never redefine a function's inherited default parameter value",
+                                "desc": "This is because default parameter values are statically bound, while virtual functions are dynamically bound. So this will not do the right thing."
+                              },
+                              {
+                                "title": "Item 38: Model \"has-a\" or \"is implemented in terms of\" through composition",
+                                "desc": "In the application domain, composition means as-is. In the implementation domain it means is-implemented-in-terms-of"
+                              },
+                              {
+                                "title": "Item 39: Use private inheritance judiciously",
+                                "desc": "Private inheritance means is-implemented-in-terms-of. Its inferior to composition, but useful when derived class needs access to protected base class members or redefine inherited virtual functions."
+                              },
+                              {
+                                "title": "Item 40: Use multiple inheritance judiciously",
+                                "desc": "It can lead to ambiguity issues and to the need for virtual inheritance. Virtual inheritance adds costs in size, speed and complexity of initialization and assignment. MI does have legitimate use cases, for example combining public inheritance from an interface class, and private inheritance from a class that helps with implementation."
+                              },
                            ];
 
 
