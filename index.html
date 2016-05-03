@@ -39,6 +39,19 @@
         <span id="settings-toggle"><a href="#" onclick="toggleVisibility('settings')" title="Toggle Settings"><i class="fa fa-cog fa-2x"></i></a></span>
     </div>
 
+    <div class="card">
+        <input id="effmoderntipNumber" type="hidden">
+        <div id="effmodernbookname"></div>
+        <div id="effmoderntip">
+            <div id="effmodernsection"></div>
+            <div id="effmoderntitle"></div>
+            <div id="effmoderndesc"></div>
+        </div>
+        <div id="effmodernbookname"></div>
+        <span><a target="_blank" href="https://github.com/braydie/PragProgTips" title="View on GitHub"><i class="fa fa-github fa-2x"></i></a></span>
+        <span id="settings-toggle"><a href="#" onclick="toggleVisibility('settings')" title="Toggle Settings"><i class="fa fa-cog fa-2x"></i></a></span>
+    </div>
+
     <div id="settings" class="card">
         <div>
             <h2>Theme</h2>
@@ -68,14 +81,19 @@
                 itemNumber = Math.floor(Math.random()*Tips.length);
             }
             effectiveItemNumber = Math.floor(Math.random()*effectiveTips.length);
+            effectiveModernItemNumber = Math.floor(Math.random()*effectiveModernTips.length);
             var item = Tips[itemNumber];
             var effectiveItem = effectiveTips[effectiveItemNumber];
+            var effectiveModernItem = effectiveModernTips[effectiveModernItemNumber];
             document.getElementById("title").innerHTML = item.title;
             document.getElementById("desc").innerHTML = item.desc;
             document.getElementById("tipNumber").value = itemNumber;
             document.getElementById("efftitle").innerHTML = effectiveItem.title;
             document.getElementById("effdesc").innerHTML = effectiveItem.desc;
             document.getElementById("efftipNumber").value = effectiveItemNumber;
+            document.getElementById("effmoderntitle").innerHTML = effectiveModernItem.title;
+            document.getElementById("effmoderndesc").innerHTML = effectiveModernItem.desc;
+            document.getElementById("effmoderntipNumber").value = effectiveModernItemNumber;
         }
 
         function toggleVisibility(id) {
@@ -629,6 +647,36 @@
                               },
                            ];
 
+        var effectiveModernTips = [ 
+                              {
+                                 "title": "Item 1: Understand template type deduction.",
+                                 "desc": "References, const, volatile are ignored. Arrays decay to pointers."
+                              },
+                              {
+                                 "title": "Item 2: Understand auto type deduction.",
+                                 "desc": "Mostly like template type deduction, but braced initializer represents std::initializer_list. auto in function return type or lambda parameter implies template type deduction."
+                              },
+                              {
+                                 "title": "Item 3: Understand decltype.",
+                                 "desc": "Almost always reports the exact type variable or expression without any modifications. For lvalue expressions of type T, always reports a type T&. decltype(auto) in C++14 deduces type using initializer type but with decltype rules."
+                              },
+                              {
+                                 "title": "Item 4: Know how to view deduced types.",
+                                 "desc": "IDE editors, compiler error messages, Boost TypeIndex library can be used. But a basic understanding of C++ type deduction remains essential."
+                              },
+                              {
+                                 "title": "Item 5: Prefer auto to explicit type declaration.",
+                                 "desc": "auto variables must be initialized, immune to type mismatches that lead to portability or efficiency, can ease refactoring and require less typing." 
+                              },
+                              {
+                                 "title": "Item 6: Use explicitly typed initializer idiom when auto deduces undesirable types.",
+                                 "desc": "Invisible proxy types can cause auto to deduce the wrong type for an initializing expression. This idiom forces auto to deduce the right type."
+                              },
+                              {
+                                 "title": "Item 7: Distinguish between {} and () when creating objects.",
+                                 "desc": "Braced initilazer is the most widely usable initialization syntax. Prevents narrowing conversions, immune to C++'s most vexing parse. During constructor overload resolution, braced initializers are matched to std::initalizer_list if at all possible, even at the cost of better matches otherwise. Vectors for example have very different meaning when using () and {} initializers."
+                              },
+                          ];
 
         window.onload = function() {
             if(localStorage.getItem("enableReload") != null)
@@ -652,6 +700,7 @@
 
             document.getElementById("bookname").innerHTML = "The Pragmatic programmer";
             document.getElementById("effbookname").innerHTML = "Effective C++";
+            document.getElementById("effmodernbookname").innerHTML = "Effective Modern C++";
             showTip();
         }
 

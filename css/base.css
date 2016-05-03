@@ -47,7 +47,27 @@ html {
     right: 100px;
 }
 
-#effdesc { 
+#effmoderndesc { 
+    margin-top:1em; 
+    margin-bottom:1em; 
+    font-size:1.5em; 
+}
+
+#effmoderntitle {  
+    font-weight: bold; 
+    font-size: 2.5em; 
+    padding-bottom:0.25em;
+}
+
+#effmodernbookname {  
+    font-weight: bold; 
+    font-size: 1em; 
+    padding-bottom:0.25em;
+    position:absolute;
+    right: 100px;
+}
+
+#effmoderndesc { 
     margin-top:1em; 
     margin-bottom:1em; 
     font-size:1.5em; 

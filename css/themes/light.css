@@ -23,6 +23,14 @@ html {
     color:#434A54;
 }
 
+#effmoderntitle {
+    border-bottom:4px solid #37BC9B; 
+}
+
+#effmoderndesc {
+    color:#434A54;
+}
+
 a {
     color:#DA4453; 
 }
