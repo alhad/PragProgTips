@@ -676,6 +676,34 @@
                                  "title": "Item 7: Distinguish between {} and () when creating objects.",
                                  "desc": "Braced initilazer is the most widely usable initialization syntax. Prevents narrowing conversions, immune to C++'s most vexing parse. During constructor overload resolution, braced initializers are matched to std::initalizer_list if at all possible, even at the cost of better matches otherwise. Vectors for example have very different meaning when using () and {} initializers."
                               },
+                              {
+                                 "title": "Item 8: Prefer nullptr to 0 and NULL.",
+                                 "desc": "Avoid overloading on integral and pointer types, which can happen if you use 0 where you intended null pointer."
+                              },
+                              {
+                                 "title": "Item 9: Prefer alias declarations to typedefs.",
+                                 "desc": "alias declarations support templatization, avoid ::type suffix and the typename prefix often required to prefix typedefs. C++14 offers alias templates for all the C++11 type trait transforms."
+                              },
+                              {
+                                 "title": "Item 10: Prefer scoped enums to unscoped enums.",
+                                 "desc": "Enumerators of scoped enums are visible only in the enum. They convert to other types only with a cast. Unscoped enums have no underlying default type. Scoped enums may always be forward declared."
+                              },
+                              {
+                                 "title": "Item 11: Prefer deleted functions to private undefined ones.",
+                                 "desc": "Any function may be deleted, including non-member functions and template instantiations."
+                              },
+                              {
+                                 "title": "Item 12: Declare overriding functions override.",
+                                 "desc": "This prevents override errors when types don't match. Member function reference qualifiers make it possible to treat lvalue and rvalue objects (*this) differently."
+                              },
+                              {
+                                 "title": "Item 13: Prefer const_iterators to iterators.",
+                                 "desc": "Const iterators are easy to get and easy to use in C++11. In maximally generic code, prefer non-member versions of begin, end, rbegin etc, over their member function counterparts."
+                              },
+                              {
+                                 "title": "Item 14: Declare functions noexcept if they won't emit exceptions.",
+                                 "desc": "noexcept is part of a function's interface, and that means callers may depend on it. noexcept functions are more optimizable than non-noexcept functions. noexcept is valuable for move operations, swap, memory deallocation functions, and desctructors."
+                              },
                           ];
 
         window.onload = function() {
